@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import ReactPlayer from "react-player/lazy";
+import ReactPlayer from "react-player";
 import * as bs from "react-bootstrap";
 import "./dogs.css";
 
@@ -14,6 +14,7 @@ class Dogs extends Component {
 
     async componentDidMount() {
         var dogs = [];
+        // get eight valid input
         for (var i = 0; i < 8; i++) {
             const { data: dog } = await axios.get(
                 "https://random.dog/woof.json"
@@ -27,18 +28,18 @@ class Dogs extends Component {
             ) {
                 dogs.push(dog);
             } else {
+                // if invalid, continue reading
+                console.log(dog.u)
                 i--;
             }
         }
-        console.log(dogs);
         this.state.dogs = dogs;
         this.setState(dogs);
     }
 
     render() {
         const { length: count } = this.state.dogs;
-        console.log("Count is: " + count);
-        if (count === 0) return <p>Dogs Loading...</p>;
+        if (count === 0) return <p>Loading...</p>;
         return (
             <React.Fragment>
                 <p> Showing {count} Dogs in the database. </p>
@@ -96,6 +97,8 @@ class Dogs extends Component {
     }
 }
 
+// copied from https://stackoverflow.com/questions/6860853/generate-random-string-for-div-id
+// get a unique ID
 function guidGenerator() {
     var S4 = function () {
         return (((1 + Math.random()) * 0x10000) | 0).toString(16).substring(1);
