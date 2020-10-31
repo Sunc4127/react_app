@@ -2,19 +2,29 @@
 
 ```
 my-app
+├── coverage
 ├── node_modules
 ├── public
 │   ├── favicon.ico
 │   ├── index.html
+│   ├── logo192.png
+│   ├── logo512.png
+│   ├── robots.txt
 │   └── manifest.json
 ├── src
+│   ├── __snapshots__
+│   │   └── App.test.js.snap
+│   ├── components
+│   │   ├── dogs.css
+│   │   └── dogs.jsx
 │   ├── App.css
 │   ├── App.js
 │   ├── App.test.js
 │   ├── index.css
 │   ├── index.js
-│   ├── logo.svg
-│   └── serviceWorker.js
+│   ├── reportWebVitals.js
+│   ├── setupTests.js
+│   └── logo.svg
 ├── .gitignore
 ├── package.json
 └── README.md
