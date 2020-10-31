@@ -6,9 +6,16 @@
     "@testing-library/jest-dom": "^5.11.5",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "axios": "^0.21.0",
+    "bootstrap": "^4.5.3",
+    "chalk": "^4.1.0",
+    "enzyme": "^3.11.0",
     "react": "^17.0.1",
+    "react-bootstrap": "^1.4.0",
     "react-dom": "^17.0.1",
+    "react-player": "^2.6.2",
     "react-scripts": "4.0.0",
+    "react-test-renderer": "^17.0.1",
     "web-vitals": "^0.2.4"
   },
   "scripts": {
@@ -34,5 +41,23 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "jest": {
+    "setupFilesAfterEnv": [
+      "<rootDir>src/setupTests.js"
+    ],
+    "unmockedModulePathPatterns": [
+      "node_modules/react/",
+      "node_modules/enzyme/"
+    ]
+  },
+  "devDependencies": {
+    "enzyme-to-json": "^3.6.1"
+  }, "moduleFileExtensions": [
+    "js",
+    "jsx",
+    "json",
+    "node",
+    "ts"
+  ]
 }

@@ -29,7 +29,7 @@ class Dogs extends Component {
                 dogs.push(dog);
             } else {
                 // if invalid, continue reading
-                console.log(dog.u)
+                //console.log(dog.u)
                 i--;
             }
         }
@@ -39,10 +39,19 @@ class Dogs extends Component {
 
     render() {
         const { length: count } = this.state.dogs;
-        if (count === 0) return <p>Loading...</p>;
+        if (count === 0) return (
+            <h1>
+                <bs.Badge variant="dark" className="load">Images and Videos Loading......</bs.Badge>{" "}
+            </h1>
+        );
         return (
             <React.Fragment>
-                <p> Showing {count} Dogs in the database. </p>
+                <h3>
+                    <bs.Badge variant="dark" className="count">
+                        {" "}
+                        Showing {count} Dogs in the database.{" "}
+                    </bs.Badge>
+                </h3>
                 <bs.Container fluid className="container">
                     <bs.Row>
                         {this.state.dogs.map((dog) =>
