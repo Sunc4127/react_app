@@ -30,6 +30,21 @@ my-app
 └── README.md
 ```
 
+## Assumptions
+
+- Image file types:
+  - png
+  - jpg
+  - gif
+  - jpeg
+
+- Video files types:
+  - mp4
+  - webm
+
+These file types are valid types that can be accepted by the web app.
+Files of other types are going to be discarded.
+
 ## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

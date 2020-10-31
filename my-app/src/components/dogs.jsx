@@ -24,12 +24,16 @@ class Dogs extends Component {
                 dog.url.toLowerCase().includes(".png") ||
                 dog.url.toLowerCase().includes(".gif") ||
                 dog.url.toLowerCase().includes(".jpg") ||
+                dog.url.toLowerCase().includes(".jpeg") ||
+                dog.url.toLowerCase().includes(".webm") ||
                 dog.url.toLowerCase().includes(".mp4")
             ) {
                 dogs.push(dog);
+                console.log(dog.url);
             } else {
                 // if invalid, continue reading
-                //console.log(dog.u)
+                console.log("What?");
+                console.log(dog.url);
                 i--;
             }
         }
@@ -39,11 +43,17 @@ class Dogs extends Component {
 
     render() {
         const { length: count } = this.state.dogs;
-        if (count === 0) return (
-            <h1>
-                <bs.Badge variant="dark" className="load">Images and Videos Loading......</bs.Badge>{" "}
-            </h1>
-        );
+        // wait for images and videos to be loaded
+        if (count === 0)
+            return (
+                <h1>
+                    <bs.Badge variant="dark" className="load">
+                        Images and Videos Loading......
+                    </bs.Badge>{" "}
+                </h1>
+            );
+
+        // present them
         return (
             <React.Fragment>
                 <h3>
@@ -57,6 +67,7 @@ class Dogs extends Component {
                         {this.state.dogs.map((dog) =>
                             dog.url.toLowerCase().includes(".png") ||
                             dog.url.toLowerCase().includes(".gif") ||
+                            dog.url.toLowerCase().includes(".jpeg")||
                             dog.url.toLowerCase().includes(".jpg") ? (
                                 <bs.Col
                                     lg="3"
