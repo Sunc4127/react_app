@@ -29,11 +29,10 @@ class Dogs extends Component {
                 dog.url.toLowerCase().includes(".mp4")
             ) {
                 dogs.push(dog);
-                console.log(dog.url);
+                //console.log(dog.url);
             } else {
                 // if invalid, continue reading
-                console.log("What?");
-                console.log(dog.url);
+                //console.log(dog.url);
                 i--;
             }
         }
